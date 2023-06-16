@@ -6,12 +6,7 @@ from base.models import Item
 @api_view(['GET'])
 def getData(request):
 
-    # let's save  some data in the database
-    items = Item()
-    items.name = 'satyam'
-    items.save()
-    # another way to save in the database by using objects
-    Item.objects.create(name = 'binod')
+    
 
     items = Item.objects.all()
     serializer = ItemSerializers(items, many=True)
